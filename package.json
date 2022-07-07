@@ -1,8 +1,8 @@
 {
-  "name": "com.halluvision.abilitysystem",
+  "name": "com.halluvision.poolsystem",
   "version": "0.0.1",
-  "displayName": "AbilitySystem",
-  "description": "A State machine based on scriptable objects and gameplay tags",
+  "displayName": "PoolSystem",
+  "description": "A generic Pool system for unity objects",
   "unity": "2019.1",
   "unityRelease": "0b5",
   "documentationUrl": "https://example.com/",

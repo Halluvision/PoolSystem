@@ -1,2 +1,2 @@
-# Ability System
-A State machine based on scriptable objects and gameplay tags
+# Pool System
+A generic Pool system for unity objects
