@@ -14,9 +14,13 @@ namespace Halluvision.PoolSystem
             set { _isPooled = value; gameObject.SetActive(!value); }
         }
 
+        private Transform _poolTrans;
+        public Transform PoolTransform { get { return _poolTrans; } set { _poolTrans = value; } }
+
         private void OnDestroy()
         {
-            ObjectPoolManager.Instance.RemoveObject(this);
+            if (ObjectPoolManager.Instance != null)
+                ObjectPoolManager.Instance.RemoveObject(this);
         }
     }
 }

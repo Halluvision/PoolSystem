@@ -6,6 +6,7 @@ namespace Halluvision.PoolSystem
     {
         public bool isPersistant;
         protected static T instance;
+        private static bool isApplicationQuitting = false;
 
         public static T Instance
         {
@@ -13,6 +14,8 @@ namespace Halluvision.PoolSystem
             {
                 if (instance == null)
                 {
+                    if (isApplicationQuitting)
+                        return null;
                     var obj = new GameObject(typeof(T).Name, typeof(T)).GetComponent<T>();
                     instance = obj;
                     if (obj.isPersistant)
@@ -35,6 +38,11 @@ namespace Halluvision.PoolSystem
                 if (instance != gameObject.GetComponent<T>())
                     Destroy(gameObject);
             }
+        }
+
+        protected virtual void OnApplicationQuit()
+        {
+            isApplicationQuitting = true;
         }
     }
 }
